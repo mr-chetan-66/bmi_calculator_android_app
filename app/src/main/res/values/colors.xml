@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent_dark">#FF5722</color> <!-- Orange accent color -->
+    <color name="primary_dark">#121212</color> <!-- Darker shade of black for primary areas -->
+    <color name="secondary_dark">#1F1F1F</color> <!-- Dark grey for secondary areas -->
+    <color name="bmi_bg">#111822</color>
+
+    <!-- Primary Color Palette -->
+    <color name="primary_color">#FF03DAC5</color>
+    <color name="primary_variant">#FF018786</color>
+    <color name="secondary_color">#FF6200EE</color>
+    <color name="secondary_color2">#2196F3</color>
+    <color name="nav_icon_inactive_color">#A0A0A0</color>
+    <!-- Background Colors -->
+    <color name="background_start2">#F8F9FA</color>
+    <color name="background_start">#FF6200EE</color>
+    <color name="background_end">#FFBB86FC</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary_dark">#DE000000</color>
+    <color name="text_secondary_dark">#99000000</color>
+
+    
+    <!-- Outline and Shadow -->
+    <color name="outline"></color>
+    <color name="shadow">#000000</color>
+
+</resources>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMI Calculator</string>
+
+    <!-- BMI Formula Content -->
+    <string name="bmi_formula_content">
+        <![CDATA[
+        <h2>BMI Formula</h2>
+        <p>
+        <b>Body Mass Index (BMI)</b> is a simple formula used to calculate whether a person has a healthy weight for their height.<br/>
+        Formula: <b>BMI = Weight in kilograms / (Height in meters)^2</b>
+        </p>
+        ]]>
+    </string>
+
+    <!-- FAQ Content -->
+    <string name="faq_content">
+        <![CDATA[
+        <h2>BMI FAQs</h2>
+        <ol>
+            <li>
+                <b>How <i>accurate</i> is <b>BMI</b>?</b><br/>
+                ► BMI is a general indicator and may not be accurate for athletes.
+            </li>
+            <li>
+                <b>What is a <b>normal BMI range</b>?</b><br/>
+                ► The normal BMI range is between <i><b>18.5 and 24.9</b></i>.
+            </li>
+        </ol>
+        ]]>
+    </string>
+
+    <!-- How to Improve BMI Content -->
+    <string name="improve_bmi_content">
+        <![CDATA[
+        <h2>How to Improve BMI</h2>
+        <h3>1. Balanced Diet</h3>
+        <ul>
+            <li><b>Whole grains:</b> Choose oats, brown rice.</li>
+            <li><b>Protein:</b> Lean meats, beans for muscle.</li>
+            <li><b>Healthy fats:</b> Avocado, nuts, olive oil.</li>
+        </ul>
+
+        <h3>2. Regular Exercise</h3>
+        <ul>
+            <li><b>Cardio:</b> Walk, run, or cycle daily.</li>
+            <li><b>Strength:</b> Build muscle to boost metabolism.</li>
+        </ul>
+
+        <h3>3. Lifestyle Habits</h3>
+        <ul>
+            <li><b>Hydrate:</b> Drink water to aid digestion.</li>
+            <li><b>Sleep:</b> 7-8 hours nightly to regulate hunger.</li>
+        </ul>
+        ]]>
+    </string>
+
+    <!-- Health Risks Content -->
+    <string name="health_risks_content">
+        <![CDATA[
+        <h2>BMI Health Risks</h2>
+        <h3>Underweight (BMI < 18.5)</h3>
+        <ul>
+            <li>Nutrient deficiencies</li>
+            <li>Weakened immune system</li>
+            <li>Osteoporosis risk</li>
+            <li>Fertility issues</li>
+        </ul>
+
+        <h3>Overweight (BMI 25-29.9) and Obesity (BMI ≥ 30)</h3>
+        <ul>
+            <li>Heart disease</li>
+            <li>Type 2 diabetes</li>
+            <li>High blood pressure</li>
+            <li>Joint problems</li>
+        </ul>
+        ]]>
+    </string>
+
+    <!-- Side Effects Content -->
+    <string name="side_effects_content">
+        <![CDATA[
+        <h2>Side Effects of Abnormal BMI</h2>
+        <h3>Low BMI Effects:</h3>
+        <ul>
+            <li>Reduced energy levels</li>
+            <li>Poor concentration</li>
+            <li>Delayed wound healing</li>
+            <li>Hormonal imbalances</li>
+        </ul>
+
+        <h3>High BMI Effects:</h3>
+        <ul>
+            <li>Sleep apnea</li>
+            <li>Respiratory problems</li>
+            <li>Increased cancer risk</li>
+            <li>Mental health issues</li>
+        </ul>
+        ]]>
+    </string>
+
+    <!-- History Content -->
+    <string name="history_content">
+        <![CDATA[
+        <h2>History of BMI</h2>
+        <p>The <b>Body Mass Index (BMI)</b> was developed by Belgian mathematician Adolphe Quetelet in the 1830s. Originally called the Quetelet Index, it became widely adopted as a health measure in the 1970s.</p>
+
+        <h3>Key Developments:</h3>
+        <ul>
+            <li><b>1830s:</b> Initial development by Quetelet</li>
+            <li><b>1972:</b> Renamed to Body Mass Index</li>
+            <li><b>1985:</b> WHO adopts BMI standards</li>
+            <li><b>Present:</b> Global standard for weight assessment</li>
+        </ul>
+        ]]>
+    </string>
+
+    <!-- Developer Info Content -->
+    <string name="developer_info_content">
+        <![CDATA[
+        <h2>Developer Information</h2>
+        <p><b>Developed by:</b> Chetan Awari</p>
+        <p>A passionate Android Developer specializing in:</p>
+        <ul>
+            <li>Kotlin Development</li>
+            <li>Modern Android Architecture</li>
+            <li>Clean Code Practices</li>
+            <li>User-Centric Design</li>
+        </ul>
+        <p>Always striving to create apps that make a positive impact on users\' lives.</p>
+        ]]>
+    </string>
+
+    <!-- Terms and Conditions Content -->
+    <string name="terms_conditions_content">
+        <![CDATA[
+        <h2>Terms and Conditions</h2>
+        <p>By using this app, you agree to the following terms:</p>
+        <ul>
+            <li><b>Medical Disclaimer:</b> This app provides general health information and is not a substitute for professional medical advice.</li>
+            <li><b>Accuracy:</b> While we strive for accuracy, results should be verified with healthcare providers.</li>
+            <li><b>Usage:</b> The app is for personal use and should not be used for clinical decisions.</li>
+        </ul>
+        ]]>
+    </string>
+
+    <!-- Legal Information Content -->
+    <string name="legal_info_content">
+        <![CDATA[
+        <h2>Legal Information</h2>
+        <p>This application is provided \"as is\" without any warranties:</p>
+        <ul>
+            <li>Not a medical device or diagnostic tool</li>
+            <li>Consult healthcare professionals for medical advice</li>
+            <li>No liability for decisions based on app results</li>
+        </ul>
+        <p>See our privacy policy and terms of service for complete details.</p>
+        ]]>
+    </string>
+
+    <!-- Privacy Policy Content -->
+    <string name="privacy_policy_content">
+        <![CDATA[
+        <h2>Privacy Policy</h2>
+        <p><b>Data Collection:</b></p>
+        <ul>
+            <li>No personal data collected</li>
+            <li>No data shared with third parties</li>
+            <li>All calculations performed locally</li>
+            <li>No internet connection required</li>
+        </ul>
+        <p>Your privacy is our priority. This app operates completely offline and stores no personal information.</p>
+        ]]>
+    </string>
+
+    <!-- Copyright Content -->
+    <string name="copyright_content">
+        <![CDATA[
+        <h2>Copyright Notice</h2>
+        <p>© 2024 Chetan Awari. All rights reserved.</p>
+        <p>This application and its content are protected by copyright law:</p>
+        <ul>
+            <li>No unauthorized distribution</li>
+            <li>No commercial use without permission</li>
+            <li>No modification of app components</li>
+        </ul>
+        <p>For permissions or inquiries, please contact the developer.</p>
+        ]]>
+    </string>
+</resources>
