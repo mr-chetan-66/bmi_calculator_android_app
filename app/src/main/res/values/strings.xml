@@ -120,13 +120,7 @@
         <![CDATA[
         <h2>Developer Information</h2>
         <p><b>Developed by:</b> Chetan Awari</p>
-        <p>A passionate Android Developer specializing in:</p>
-        <ul>
-            <li>Kotlin Development</li>
-            <li>Modern Android Architecture</li>
-            <li>Clean Code Practices</li>
-            <li>User-Centric Design</li>
-        </ul>
+        <p>A passionate Android Developer </p>
         <p>Always striving to create apps that make a positive impact on users\' lives.</p>
         ]]>
     </string>
@@ -171,6 +165,34 @@
         </ul>
         <p>Your privacy is our priority. This app operates completely offline and stores no personal information.</p>
         ]]>
+
+    </string>
+
+    <!-- Help Center Content -->
+    <string name="help_center_content">
+        <![CDATA[
+        <h2>Help Center</h2>
+        <p>If you need assistance, please check the following resources:</p>
+        <ul>
+            <li><b>FAQs:</b> Find answers to common questions.</li>
+            <li><b>User Guide:</b> Step-by-step instructions on how to use the app.</li>
+            <li><b>Community Forum:</b> Connect with other users and get help.</li>
+        </ul>
+        <p>For further support, feel free to reach out to us.</p>
+        ]]>
+
+    </string>
+
+    <!-- Contact Support Content -->
+    <string name="contact_support_content">
+        <![CDATA[
+        <h2>Contact Support</h2>
+        <p>Need help? Our support team is here for you.</p>
+        <p><b>Email:</b> <a href="mailto:chetanawari2002@gmail.com">chetanawari2002@gmail.com</a></p>
+        <p><b>Phone:</b> <a href="tel:+917843032964">+91 7843032964</a></p>
+        <p><b>Support Hours:</b> Monday to Friday, 6 PM - 10 PM </p>
+        <p>We aim to respond to all queries within 24 hours.</p>
+        ]]>
     </string>
 
     <!-- Copyright Content -->
@@ -187,4 +209,16 @@
         <p>For permissions or inquiries, please contact the developer.</p>
         ]]>
     </string>
+
+    <!-- Tutorial Titles -->
+    <string name="tutorial_age_title">Enter Your Age</string>
+    <string name="tutorial_gender_title">Select Gender</string>
+    <string name="tutorial_height_title">Enter Height</string>
+    <string name="tutorial_weight_title">Enter Weight</string>
+
+    <!-- Tutorial Descriptions -->
+    <string name="tutorial_age_description">Start by entering your age in years</string>
+    <string name="tutorial_gender_description">Choose your gender by clicking one of these options</string>
+    <string name="tutorial_height_description">Input your height in feet and inches</string>
+    <string name="tutorial_weight_description">Finally, enter your weight in kilograms</string>
 </resources>

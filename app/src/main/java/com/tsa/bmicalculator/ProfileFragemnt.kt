@@ -37,6 +37,10 @@ class ProfileFragment : Fragment() {
     private lateinit var checkinsCountTextView: TextView
     private lateinit var factTextView: TextView
     private lateinit var bmiCategoryTextView: TextView
+    private lateinit var totalCheckinsTextView: TextView
+    private lateinit var goalWeightTextView: TextView
+    private lateinit var bmiImprovementTextView: TextView
+
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private var typewriterJob: Job? = null
@@ -67,6 +71,10 @@ class ProfileFragment : Fragment() {
         weightValueTextView = view.findViewById(R.id.weight_value)
         checkinsCountTextView = view.findViewById(R.id.checkins_count)
         bmiCategoryTextView = view.findViewById(R.id.bmi_category)
+        totalCheckinsTextView = view.findViewById(R.id.checkins_count)
+        goalWeightTextView = view.findViewById(R.id.goal_weight)
+        bmiImprovementTextView = view.findViewById(R.id.bmi_improvement)
+
 
         bmiCategory()
         startTypewriterEffect()
@@ -139,18 +147,35 @@ class ProfileFragment : Fragment() {
     }
 
     private fun updateQuickStats() {
-        sharedViewModel.height.observe(viewLifecycleOwner) { height ->
-            heightValueTextView.text = "${height} cm"
+        sharedViewModel.heightInCm.observe(viewLifecycleOwner) { height ->
+            heightValueTextView.text = if (height == "N/A" || height == "0.0 cm") "N/A" else height
         }
 
         sharedViewModel.weight.observe(viewLifecycleOwner) { weight ->
-            weightValueTextView.text = "${weight} kg"
+            weightValueTextView.text = if (weight == -1) "N/A" else "$weight kg"
         }
 
         sharedViewModel.checkinsCount.observe(viewLifecycleOwner) { count ->
-            checkinsCountTextView.text = count.toString()
+            totalCheckinsTextView.text = count.toString() // Bind check-in count to TextView
+            sharedViewModel.updateAchievements() // Update achievements whenever check-ins update
+        }
+
+        sharedViewModel.achievements.observe(viewLifecycleOwner) { achievements ->
+            // Use the achievements value and bind it to the UI as required
+        }
+
+        sharedViewModel.goalWeight.observe(viewLifecycleOwner) { goalWeight ->
+            goalWeightTextView.text = if (goalWeight.isEmpty()) "N/A" else goalWeight // Bind goal weight to TextView
+        }
+
+        sharedViewModel.bmiImprovement.observe(viewLifecycleOwner) { bmiImprovement ->
+            bmiImprovementTextView.text = if (bmiImprovement.isEmpty()) "N/A" else bmiImprovement // Bind BMI improvement to TextView
         }
     }
+
+
+
+
 
     private fun setProfile() {
         val sharedPreferences = requireActivity().getSharedPreferences("UserProfile", MODE_PRIVATE)

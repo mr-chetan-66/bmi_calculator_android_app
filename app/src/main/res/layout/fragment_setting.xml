@@ -79,6 +79,7 @@
                         android:id="@+id/privacyDetailsTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:visibility="gone"
                         android:text="Here you can manage your data privacy settings and preferences."
                         android:padding="8dp" />
@@ -208,6 +209,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="gone"
+                        android:textColor="@color/black"
                         android:text="Find answers to your questions or browse through FAQs."
                         android:padding="8dp" />
                 </LinearLayout>
@@ -241,6 +243,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="gone"
+                        android:textColor="@color/black"
                         android:text="Reach out to us for assistance with your account or other issues."
                         android:padding="8dp" />
                 </LinearLayout>

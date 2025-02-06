@@ -108,6 +108,13 @@ class AboutFragment : Fragment() {
                 Html.fromHtml(getString(R.string.terms_conditions_content), Html.FROM_HTML_MODE_COMPACT)
             ))
 
+            // Copyright Section
+            add(AboutSection(
+                "Copyright",
+                R.drawable.ic_copyright,
+                Html.fromHtml(getString(R.string.copyright_content), Html.FROM_HTML_MODE_COMPACT)
+            ))
+
             // Legal Information Section
             add(AboutSection(
                 "Legal Information",
@@ -115,19 +122,6 @@ class AboutFragment : Fragment() {
                 Html.fromHtml(getString(R.string.legal_info_content), Html.FROM_HTML_MODE_COMPACT)
             ))
 
-            // Privacy Policy Section
-            add(AboutSection(
-                "Privacy Policy",
-                R.drawable.ic_privacy,
-                Html.fromHtml(getString(R.string.privacy_policy_content), Html.FROM_HTML_MODE_COMPACT)
-            ))
-
-            // Copyright Section
-            add(AboutSection(
-                "Copyright",
-                R.drawable.ic_copyright,
-                Html.fromHtml(getString(R.string.copyright_content), Html.FROM_HTML_MODE_COMPACT)
-            ))
         }
         sectionsAdapter.notifyDataSetChanged()
     }
@@ -185,12 +179,12 @@ class AboutSectionsAdapter(
                 contentCard.alpha = 0f
                 contentCard.animate()
                     .alpha(1f)
-                    .setDuration(200)
+                    .setDuration(600)
                     .start()
             } else {
                 contentCard.animate()
                     .alpha(0f)
-                    .setDuration(200)
+                    .setDuration(300)
                     .withEndAction {
                         contentCard.visibility = View.GONE
                     }

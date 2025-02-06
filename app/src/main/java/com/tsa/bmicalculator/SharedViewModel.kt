@@ -21,7 +21,7 @@ class SharedViewModel : ViewModel() {
     private val _height = MutableLiveData<Int>()
     val height: LiveData<Int> get() = _height
 
-    private val _weight = MutableLiveData<Int>()
+    private val _weight = MutableLiveData(-1)
     val weight: LiveData<Int> get() = _weight
 
     private val _checkinsCount = MutableLiveData<Int>(0)
@@ -53,8 +53,6 @@ class SharedViewModel : ViewModel() {
     }
 
     // LiveData for user inputs
-    private val _weightInput = MutableLiveData<String>()
-    val weightInput: LiveData<String> get() = _weightInput
 
     private val _feetInput = MutableLiveData<String>()
     val feetInput: LiveData<String> get() = _feetInput
@@ -65,11 +63,58 @@ class SharedViewModel : ViewModel() {
     private val _ageInput = MutableLiveData<String>()
     val ageInput: LiveData<String> get() = _ageInput
 
-    // Methods to update user inputs
+    // LiveData for computed height in cm
+    private val _heightInCm = MutableLiveData("N/A")
+    val heightInCm: LiveData<String> get() = _heightInCm
+
+    // Method to update user inputs and calculate height in cm
     fun setUserInputs(weight: String, feet: String, inches: String, age: String) {
-        _weightInput.value = weight
         _feetInput.value = feet
         _inchesInput.value = inches
         _ageInput.value = age
+
+        // Convert feet & inches to cm
+        val feetToCm = feet.toIntOrNull()?.times(30.48) ?: 0.0
+        val inchesToCm = inches.toIntOrNull()?.times(2.54) ?: 0.0
+        val totalHeight = feetToCm + inchesToCm
+
+        _heightInCm.value = if (totalHeight > 0) "%.1f cm".format(totalHeight) else "N/A"
+
+        // Update weight
+        _weight.value = weight.toIntOrNull() ?: -1
     }
+
+    private val _goalWeight = MutableLiveData<String>()
+    private val _bmiImprovement = MutableLiveData<String>()
+
+    val goalWeight: LiveData<String> get() = _goalWeight
+    val bmiImprovement: LiveData<String> get() = _bmiImprovement
+    private val _achievements = MutableLiveData<String>()
+    val achievements: LiveData<String> get() = _achievements
+
+
+    fun updateAchievements() {
+        val checkins = _checkinsCount.value ?: 0
+        val bmiHistoryList = _bmiHistory.value.orEmpty()
+
+        val bmiImprovement = if (bmiHistoryList.size > 1) {
+            (bmiHistoryList.last() - bmiHistoryList.first()).toString()
+        } else {
+            "0.0"
+        }
+
+        // Update the LiveData for the TextViews
+        _achievements.value = """
+        • Consistent Check-ins: $checkins times
+        • Goal Weight Maintained: ${if (checkins >= 2) "Yes" else "No"}
+        • BMI Improvement: $bmiImprovement points
+    """.trimIndent()
+
+        // Also update specific LiveData for Goal Weight and BMI Improvement
+        _goalWeight.value = if (checkins >= 2) "Yes" else "No"
+        _bmiImprovement.value = bmiImprovement
+    }
+
+
+
 }

@@ -27,6 +27,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        // Check if it's the first time launch
         setupObservers()
         setupListeners()
         return binding.root
@@ -39,9 +40,6 @@ class HomeFragment : Fragment() {
         }
 
         // Restore user inputs from SharedViewModel
-        sharedViewModel.weightInput.observe(viewLifecycleOwner) { weight ->
-            if (!weight.isNullOrEmpty()) binding.etWeight.setText(weight)
-        }
         sharedViewModel.feetInput.observe(viewLifecycleOwner) { feet ->
             if (!feet.isNullOrEmpty()) binding.etFeet.setText(feet)
         }
@@ -85,8 +83,21 @@ class HomeFragment : Fragment() {
         val inches = inchesInput.toIntOrNull()
         val age = ageInput.toIntOrNull()
 
-        if (weight == null || feet == null || inches == null || age == null || weight <= 0 || feet < 0 || inches < 0 || age <= 0 || age > 110) {
+        if (weight == null || feet == null || inches == null || age == null || weight <= 0 || feet < 0 || inches < 0 || age <= 0) {
             Toast.makeText(requireContext(), "Invalid Input Format.", Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (age > 110) {
+            Toast.makeText(requireContext(), "Age Limit Exceeded !!", Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (feet >7 || inches>12) {
+            Toast.makeText(requireContext(), "Invalid Height Input !!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (weight>190) {
+            Toast.makeText(requireContext(), "Weight Limit Exceeded!!", Toast.LENGTH_SHORT).show()
             return
         }
 

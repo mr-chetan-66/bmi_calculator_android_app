@@ -58,7 +58,7 @@
                             android:id="@+id/account_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/black"
+                            android:textColor="@color/secondary_color"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -229,7 +229,6 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
-                            android:text="175 cm"
                             android:textColor="@color/secondary_color"
                             android:textSize="14sp" />
 
@@ -246,7 +245,6 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
-                            android:text="70 kg"
                             android:textColor="@color/secondary_color"
                             android:textSize="14sp" />
 
@@ -263,13 +261,12 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
-                            android:text="12"
                             android:textColor="@color/secondary_color"
                             android:textSize="14sp" />
                     </GridLayout>
                 </LinearLayout>
 
-                <!-- Recent Achievements -->
+                <!-- Recent Achievements (Styled like Quick Stats) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -287,15 +284,49 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/achievements_text"
+                    <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="• Consistent Check-ins: 5 weeks\n• Goal Weight Maintained: 2 weeks\n• BMI Improvement: 0.5 points"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:columnCount="2">
+
+                        <!-- Goal Weight -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:text="Goal Weight:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/goal_weight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:textColor="@color/secondary_color"
+                            android:textSize="14sp" />
+
+                        <!-- BMI Improvement -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:text="BMI Improvement:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/bmi_improvement"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:textColor="@color/secondary_color"
+                            android:textSize="14sp" />
+
+                    </GridLayout>
                 </LinearLayout>
+
 
                 <!-- Health Tips Section -->
                 <LinearLayout
@@ -321,7 +352,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Calculate BMI to receive personalized tips."
-                        android:textColor="@color/black"
+                        android:textColor="@color/secondary_color"
                         android:textSize="14sp" />
                 </LinearLayout>
             <LinearLayout
@@ -345,7 +376,7 @@
                     android:layout_height="wrap_content"
                     android:text="Daily Fact Placeholder"
                     android:textSize="14sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/secondary_color" />
             </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

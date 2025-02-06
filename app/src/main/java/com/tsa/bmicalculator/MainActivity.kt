@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private var backPressedTime = 0L
+    private var currentFragment: Fragment? = null // Keep track of the current fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +49,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_setting -> SettingFragment()
                 else -> HomeFragment()
             }
-            loadFragment(selectedFragment)
+
+            // Only load the fragment if it isn't already loaded
+            if (currentFragment != null && currentFragment!!::class.java != selectedFragment::class.java) {
+                loadFragment(selectedFragment)
+            }
             true
         }
 
@@ -59,29 +64,23 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
 
         // Save the currently loaded fragment
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (currentFragment != null) {
-            supportFragmentManager.putFragment(outState, "currentFragment", currentFragment)
+        currentFragment?.let {
+            supportFragmentManager.putFragment(outState, "currentFragment", it)
         }
 
         // Save the selected navigation item
         outState.putInt("selectedItemId", bottomNavigationView.selectedItemId)
     }
 
-
-    private var homeFragment: HomeFragment? = null
-
     private fun loadFragment(newFragment: Fragment) {
-        val fragmentToLoad: Fragment = if (newFragment is HomeFragment && homeFragment != null) {
-            homeFragment!!
-        } else {
-            if (newFragment is HomeFragment) homeFragment = newFragment
-            newFragment
-        }
+        // If the fragment to be loaded is the same as the current one, return
+        if (newFragment::class.java == currentFragment?.javaClass) return
+
+        currentFragment = newFragment // Update the current fragment
 
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
-            .replace(R.id.fragment_container, fragmentToLoad)
+            .replace(R.id.fragment_container, newFragment)
             .commit()
     }
 
@@ -99,3 +98,4 @@ class MainActivity : AppCompatActivity() {
         })
     }
 }
+
